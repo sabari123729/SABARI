@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float float_val;
+    int square_input, base, power;
+
+    // Read inputs
+    scanf("%f", &float_val);
+    scanf("%d", &square_input);
+    scanf("%d", &base);
+    scanf("%d", &power);
+
+    // Perform calculations
+    int floored = floor(float_val);
+    int ceiled = ceil(float_val);
+    int square_root = sqrt(square_input);
+    int power_result = pow(base, power);
+
+    // Print results
+    printf("%d\n", floored);
+    printf("%d\n", ceiled);
+    printf("%d\n", square_root);
+    printf("%d\n", power_result);
+
+    return 0;
+}
