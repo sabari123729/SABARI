@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int i;
+    float f;
+    char c;
+    char str1[100], str2[100];
+
+    // Reading inputs
+    scanf("%d", &i);
+    scanf("%f", &f);
+    scanf(" %c", &c);         // Note the space before %c to consume leftover newline
+    scanf("%s", str1);        // Read the first string (no spaces)
+    scanf(" %[^\n]", str2);   // Read the second string (can include spaces)
+
+    // Output the formatted results
+    printf("Integer is %d\n", i);
+    printf("Float is %.2f\n", f);
+    printf("Character is %c\n", c);
+    printf("Strings are %s and %s\n", str1, str2);
+
+    return 0;
+}
