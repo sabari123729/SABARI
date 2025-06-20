@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    char input[1000];  // Adjust size as needed
+    int i = 0;
+
+    // Read the full line including spaces
+    fgets(input, sizeof(input), stdin);
+
+    // Loop through the string and print characters that are not spaces
+    while (input[i] != '\0') {
+        if (input[i] != ' ' && input[i] != '\n') {
+            printf("%c", input[i]);
+        }
+        i++;
+    }
+
+    return 0;
+}
