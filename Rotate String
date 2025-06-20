@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+bool rotateString(char *s, char *goal) {
+    int len_s = strlen(s);
+    int len_goal = strlen(goal);
+
+    // If lengths are different, s can never become goal via rotation
+    if (len_s != len_goal) {
+        return false;
+    }
+
+    // Create a new string that is s concatenated with itself
+    char temp[201]; // Max length of s is 100, so 2*100 + 1 for '\0'
+    strcpy(temp, s);
+    strcat(temp, s);
+
+    // Check if goal is a substring of the concatenated string
+    return strstr(temp, goal) != NULL;
+}
+
+int main() {
+    char s[101], goal[101];
+    
+    // Read input
+    scanf("%s", s);
+    scanf("%s", goal);
+
+    // Call the function and print result
+    if (rotateString(s, goal)) {
+        printf("true\n");
+    } else {
+        printf("false\n");
+    }
+
+    return 0;
+}
